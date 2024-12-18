@@ -20,8 +20,6 @@ let tryGetFormInt id (f: FormCollectionReader) = f.TryGetInt id
 
 // Blackbird
 let (>>>) f g x y = g (f x y)
-// Starling
-let (<*>) f g x = f x (g x)
 let warbler f x = f x x
 let phoenix f g h x = f (g x) (h x)
 let kestrel x _ = x
