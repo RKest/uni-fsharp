@@ -14,8 +14,7 @@
     devShells.${system}.default = pkgs.stdenv.mkDerivation {
       name = "fs-devshell";
       buildInputs = [ pkgs.tesseract5 ];
-      nativeBuildInputs = [ pkgs.fsharp pkgs.dotnet-sdk pkgs.fsautocomplete pkgs.nuget pkgs.tailwindcss pkgs.elmPackages.elm 
-          pkgs.elmPackages.elm-language-server pkgs.elmPackages.elm-format];
+      nativeBuildInputs = [ pkgs.fsharp pkgs.dotnet-sdk pkgs.fsautocomplete pkgs.nuget ];
     };
   };
 }
