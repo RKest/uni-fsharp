@@ -96,15 +96,6 @@ module Db =
         |> conn.SelectAsync<Tag>
         |> syncTask
 
-    let tagById (conn: SqliteConnection) (id: int) =
-        select {
-            for t in tagTable do
-                where (t.Id = id)
-        }
-        |> conn.SelectAsync<Tag>
-        |> syncTask
-        |> Seq.tryHead
-
     let noteTags (conn: SqliteConnection) (noteId: int) =
         querySeqAsync<Tag> (fun () -> SqliteConnection conn) {
             script
@@ -150,8 +141,6 @@ module Db =
         |> notePreivewCombine
 
     let notePreivewsForTag (conn: SqliteConnection) (tagId: int) =
-        printfn "tagId: %d" tagId
-
         querySeqAsync<NotePreviewInternal> (fun () -> SqliteConnection conn) {
             script
                 $"""
