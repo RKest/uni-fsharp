@@ -1,0 +1,6 @@
+.direnv/
+bin/
+obj/
+private/*
+
+a.out
